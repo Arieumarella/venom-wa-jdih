@@ -1,0 +1,67 @@
+2024/09/13-20:41:35.613 2920 Reusing MANIFEST C:\Users\ACER\Documents\nodejs\venom-wa\tokens\session-name\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/09/13-20:41:35.615 2920 Recovering log #3462
+2024/09/13-20:41:35.642 2920 Reusing old log C:\Users\ACER\Documents\nodejs\venom-wa\tokens\session-name\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/003462.log 
+2024/09/13-20:41:38.600 5bcc Manual compaction at level-0 from '\x00(\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00)\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/09/13-20:45:26.310 2920 Level-0 table #3480: started
+2024/09/13-20:45:26.387 2920 Level-0 table #3480: 1123544 bytes OK
+2024/09/13-20:45:26.393 2920 Delete type=0 #3462
+2024/09/13-20:45:30.951 2920 Compacting 1@0 + 1@1 files
+2024/09/13-20:45:31.021 2920 Generated table #3481@0: 16028 keys, 444660 bytes
+2024/09/13-20:45:31.028 2920 Generated table #3482@0: 656 keys, 39619 bytes
+2024/09/13-20:45:31.032 2920 Generated table #3483@0: 142 keys, 5918 bytes
+2024/09/13-20:45:31.032 2920 Compacted 1@0 + 1@1 files => 490197 bytes
+2024/09/13-20:45:31.034 2920 compacted to: files[ 0 3 34 0 0 0 0 ]
+2024/09/13-20:45:31.035 2920 Delete type=2 #3466
+2024/09/13-20:45:31.036 2920 Delete type=2 #3480
+2024/09/13-20:45:41.535 2920 Compacting 1@1 + 11@2 files
+2024/09/13-20:45:41.678 2920 Generated table #3484@1: 59685 keys, 2224463 bytes
+2024/09/13-20:45:41.816 2920 Generated table #3485@1: 40729 keys, 2206083 bytes
+2024/09/13-20:45:41.876 2920 Generated table #3486@1: 2582 keys, 2157106 bytes
+2024/09/13-20:45:41.928 2920 Generated table #3487@1: 2034 keys, 2156629 bytes
+2024/09/13-20:45:41.988 2920 Generated table #3488@1: 1921 keys, 2153972 bytes
+2024/09/13-20:45:42.046 2920 Generated table #3489@1: 2968 keys, 2159982 bytes
+2024/09/13-20:45:42.102 2920 Generated table #3490@1: 2371 keys, 2155451 bytes
+2024/09/13-20:45:42.162 2920 Generated table #3491@1: 2253 keys, 2159286 bytes
+2024/09/13-20:45:42.227 2920 Generated table #3492@1: 3646 keys, 2158318 bytes
+2024/09/13-20:45:42.287 2920 Generated table #3493@1: 3160 keys, 2160756 bytes
+2024/09/13-20:45:42.294 2920 Generated table #3494@1: 254 keys, 112302 bytes
+2024/09/13-20:45:42.294 2920 Compacted 1@1 + 11@2 files => 21804348 bytes
+2024/09/13-20:45:42.296 2920 compacted to: files[ 0 2 34 0 0 0 0 ]
+2024/09/13-20:45:42.297 2920 Delete type=2 #3452
+2024/09/13-20:45:42.297 2920 Delete type=2 #3453
+2024/09/13-20:45:42.298 2920 Delete type=2 #3454
+2024/09/13-20:45:42.298 2920 Delete type=2 #3455
+2024/09/13-20:45:42.298 2920 Delete type=2 #3456
+2024/09/13-20:45:42.298 2920 Delete type=2 #3457
+2024/09/13-20:45:42.298 2920 Delete type=2 #3458
+2024/09/13-20:45:42.298 2920 Delete type=2 #3459
+2024/09/13-20:45:42.298 2920 Delete type=2 #3475
+2024/09/13-20:45:42.298 2920 Delete type=2 #3476
+2024/09/13-20:45:42.298 2920 Delete type=2 #3477
+2024/09/13-20:45:42.298 2920 Delete type=2 #3481
+2024/09/13-20:45:46.567 2920 Compacting 1@1 + 11@2 files
+2024/09/13-20:45:46.714 2920 Generated table #3495@1: 24252 keys, 2194856 bytes
+2024/09/13-20:45:46.859 2920 Generated table #3496@1: 29097 keys, 2264652 bytes
+2024/09/13-20:45:46.990 2920 Generated table #3497@1: 25977 keys, 2275231 bytes
+2024/09/13-20:45:47.170 2920 Generated table #3498@1: 27565 keys, 2266148 bytes
+2024/09/13-20:45:47.291 2920 Generated table #3499@1: 26820 keys, 2256795 bytes
+2024/09/13-20:45:47.397 2920 Generated table #3500@1: 21109 keys, 2205165 bytes
+2024/09/13-20:45:47.451 2920 Generated table #3501@1: 9260 keys, 2133147 bytes
+2024/09/13-20:45:47.521 2920 Generated table #3502@1: 8115 keys, 2130852 bytes
+2024/09/13-20:45:47.593 2920 Generated table #3503@1: 15649 keys, 2140685 bytes
+2024/09/13-20:45:47.780 2920 Generated table #3504@1: 113188 keys, 2267679 bytes
+2024/09/13-20:45:47.789 2920 Generated table #3505@1: 4247 keys, 95663 bytes
+2024/09/13-20:45:47.790 2920 Compacted 1@1 + 11@2 files => 22230873 bytes
+2024/09/13-20:45:47.791 2920 compacted to: files[ 0 1 34 0 0 0 0 ]
+2024/09/13-20:45:47.792 2920 Delete type=2 #3348
+2024/09/13-20:45:47.792 2920 Delete type=2 #3446
+2024/09/13-20:45:47.792 2920 Delete type=2 #3447
+2024/09/13-20:45:47.792 2920 Delete type=2 #3448
+2024/09/13-20:45:47.793 2920 Delete type=2 #3449
+2024/09/13-20:45:47.793 2920 Delete type=2 #3469
+2024/09/13-20:45:47.793 2920 Delete type=2 #3470
+2024/09/13-20:45:47.793 2920 Delete type=2 #3471
+2024/09/13-20:45:47.793 2920 Delete type=2 #3472
+2024/09/13-20:45:47.793 2920 Delete type=2 #3473
+2024/09/13-20:45:47.793 2920 Delete type=2 #3474
+2024/09/13-20:45:47.793 2920 Delete type=2 #3482
