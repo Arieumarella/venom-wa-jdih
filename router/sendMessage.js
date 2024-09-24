@@ -1,8 +1,9 @@
 const express = require("express"),
 router = express.Router(),
-controllerSendMassage = require("../controller/controllerSendMassage");
+controllerSendMassage = require("../controller/controllerSendMassage"),
+auth = require("../middleware/auth"); 
 
 router.route('/sendMassage')
-    .post(controllerSendMassage.senMassage);
+    .post(auth, controllerSendMassage.senMassage);
 
 module.exports = router;
