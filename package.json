@@ -1,7 +1,7 @@
 {
   "name": "venom-wa",
   "version": "1.0.0",
-  "description": "",
+  "description": "vanom-wa-bot",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "dev": "nodemon app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ari umarella",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.19.1",
@@ -19,9 +19,17 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "node-cron": "^3.0.3",
-    "venom-bot": "^5.1.0"
+    "venom-bot": "github:orkestral/venom#master"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arieumarella/venom-wa-jdih.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Arieumarella/venom-wa-jdih/issues"
+  },
+  "homepage": "https://github.com/Arieumarella/venom-wa-jdih#readme"
 }
