@@ -25,9 +25,9 @@ try{
     const clientInstance = await venom.create({
         session: deviceName, 
         multidevice: true,
-        headless: false,         
-        useChrome: false,
-        executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
+        // headless: false,         
+        // useChrome: false,
+        // executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
         browserArgs: [
           '--no-sandbox',
           '--disable-setuid-sandbox',
@@ -120,7 +120,7 @@ exports.deleteClien = async (req,res) => {
 
     return res.status(200).json({
       status:true,
-      msg:'device berhasil dihapus.!'
+      message:'device berhasil dihapus.!'
     })
       
   } catch (err) {

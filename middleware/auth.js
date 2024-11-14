@@ -4,10 +4,12 @@ require('dotenv').config();
 const auth = (req, res, next) => {
 
   const token = req.header('Authorization')?.split(' ')[1]; 
+  
+  console.log('ini tokennya ------>'+token);
 
   // Cek apakah token ada
   if (!token) {
-    return res.status(401).json({ msg: 'No token, authorization denied' });
+    return res.status(401).json({ status : false, message: 'No token, authorization denied' });
   }
 
   // Verifikasi token
@@ -16,7 +18,7 @@ const auth = (req, res, next) => {
     req.user = decoded.user; 
     next(); // Lanjut ke middleware berikutnya atau rute yang diminta
   } catch (err) {
-    res.status(401).json({ msg: 'Token is not valid' });
+    res.status(401).json({ status : false, message: 'Token is not valid' });
   }
 };
 

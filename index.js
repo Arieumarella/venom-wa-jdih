@@ -1,10 +1,19 @@
 const venom = require('venom-bot');
 const express = require('express');
+const cors = require('cors');
 const cron = require('node-cron');
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const app = express();
 const port = 3000;
+
+app.use(cors({
+  origin: '*', // Sesuaikan dengan port dan domain front-end
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
@@ -21,9 +30,9 @@ async function startAndRestoreSession() {
         const clientInstance = await venom.create({
             session: device.name, 
             multidevice: false,
-            headless: false,          // Set ke false untuk menampilkan browser
-            useChrome: true,           // Set true jika ingin menggunakan Google Chrome
-            executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe', // Ganti dengan lokasi Firefox di sistem kamu
+            // headless: false,         
+            // useChrome: false,
+            // executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
             browserArgs: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
