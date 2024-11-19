@@ -25,9 +25,9 @@ try{
     const clientInstance = await venom.create({
         session: deviceName, 
         multidevice: true,
-        // headless: false,         
-        // useChrome: false,
-        // executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
+        headless: false,         
+        useChrome: false,
+        executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
         browserArgs: [
           '--no-sandbox',
           '--disable-setuid-sandbox',
@@ -98,6 +98,7 @@ exports.chackStatusConetion = async (req,res) => {
     } catch (err) {
 
     console.log(err);
+    prisma.device.deleteMany();
     return res.status(500).json({
                 status: false,
                 message: await err
@@ -116,6 +117,8 @@ exports.deleteClien = async (req,res) => {
     await client.logout();
     await client.close();
     req.app.locals.client = null;
+
+    await prisma.device.deleteMany();
 
 
     return res.status(200).json({

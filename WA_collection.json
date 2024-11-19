@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "a34235ae-eff1-42dc-9cd8-ca664a886ab1",
+		"name": "WA-JDIH",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13564959",
+		"_collection_link": "https://lunar-desert-448402.postman.co/workspace/omspan~a24c199f-c427-44bf-90fb-281a3826307a/collection/13564959-a34235ae-eff1-42dc-9cd8-ca664a886ab1?action=share&source=collection_link&creator=13564959"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ari",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "p",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/Login?name=ari&password=p",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"Login"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "ari"
+						},
+						{
+							"key": "password",
+							"value": "p"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ari",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "al@pu.go.id",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "p",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Nuw Device Scan QR Code",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXJpIiwiaWQiOjcsImlhdCI6MTczMTIzNTA0NywiZXhwIjoxNzMxMzIxNDQ3fQ.aNQ9OYy3GMRzyEBAjdbD2XgV0toId-P6K2Fy-oxp4HQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "deviceName",
+						"value": "xiomi",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "deviceName",
+							"value": "ses3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/device",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendMassage",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXJpIiwiaWQiOjcsImlhdCI6MTczMTc3MzE4MywiZXhwIjoxNzMxODU5NTgzfQ.RzUIX9iD9dgCgH3pi7j7JndJnN7r5SkY5xAlltn2y20",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nomor",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "pesan",
+							"value": "Test gan",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/sendMassage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"sendMassage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckConectionDevice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/ChackStatus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"ChackStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteClient",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYXJpIiwiaWQiOjcsImlhdCI6MTczMTIzNTA0NywiZXhwIjoxNzMxMzIxNDQ3fQ.aNQ9OYy3GMRzyEBAjdbD2XgV0toId-P6K2Fy-oxp4HQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/DeleteClient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"DeleteClient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/consoleClient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"consoleClient"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

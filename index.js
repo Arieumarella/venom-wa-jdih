@@ -30,9 +30,9 @@ async function startAndRestoreSession() {
         const clientInstance = await venom.create({
             session: device.name, 
             multidevice: false,
-            // headless: false,         
-            // useChrome: false,
-            // executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
+            headless: false,         
+            useChrome: false,
+            executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
             browserArgs: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox',
