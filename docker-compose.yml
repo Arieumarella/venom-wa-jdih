@@ -3,29 +3,36 @@ version: "3.8"
 services:
   venom-wa-api:
     build:
-      context: . # Build image dari Dockerfile di direktori saat ini
+      context: .
     container_name: venom-wa
     ports:
       - "3000:3000"
     volumes:
-      # Gunakan Docker Volume untuk menyimpan data sesi (folder tokens)
-      # Ini akan membuat sesi login Anda persisten
+      # 1. Map kode sumber dari host ke container (Bind Mount)
+      - /home/admin01/venom-wa:/app
+
+      # 2. "Trik" untuk node_modules:
+      # Mencegah node_modules dari host menimpa yang ada di container.
+      # Ini menggunakan node_modules yang diinstal oleh Dockerfile.
+      - /app/node_modules
+
+      # 3. Tetap gunakan Docker Volume untuk data sesi yang persisten
       - venom_sessions:/app/tokens
+
+    # 4. Ganti perintah startup untuk menggunakan nodemon
+    command: npm run dev
+
     networks:
       - mysql_default
-    # cap_add SYS_ADMIN seringkali dibutuhkan oleh puppeteer di lingkungan tertentu
-    # Pertahankan jika masih mengalami error sandbox, tapi ini adalah best practice
     cap_add:
       - SYS_ADMIN
     restart: unless-stopped
-    environment:
-      # Anda bisa menambahkan variabel lingkungan di sini jika diperlukan
-      - DATABASE_URL=${DATABASE_URL} # Contoh jika Anda menggunakan .env file
+    env_file:
+      - .env
 
 networks:
   mysql_default:
     external: true
 
-# Definisikan volume yang akan dikelola oleh Docker
 volumes:
-  venom_sessions:
+  venom_sessions: # Kita tidak lagi butuh volume untuk node_modules karena sudah ditangani di atas
