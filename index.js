@@ -28,34 +28,33 @@ async function startAndRestoreSession() {
 
         // Memulihkan sesi jika ada sesi yang tersimpan
         const clientInstance = await venom.create({
-            session: device.name, 
-            multidevice: false,
-            headless: false,         
-            useChrome: false,
-            executablePath: 'C:/Program Files/Mozilla Firefox/firefox.exe',
-            browserArgs: [
-                '--no-sandbox',
-                '--disable-setuid-sandbox',
-                '--start-maximized'
-              ]           
-        },(base64Qrimg, asciiQR, attempts, urlCode) => {
-            console.log('Number of attempts to read the qrcode: ', attempts);
-            console.log('Terminal qrcode: ', asciiQR);
-            console.log('base64 image string qrcode: ', base64Qrimg);
-            console.log('urlCode (data-ref): ', urlCode);
-        
+          session: device.name, 
+          multidevice: false,
+          headless: true,  // Ganti menjadi true untuk menggunakan headless mode
+          useChrome: false, // Jika menggunakan Firefox, set ke false
+          executablePath: '/usr/bin/firefox', // Ganti dengan path Firefox di Ubuntu
+          browserArgs: [
+              '--no-sandbox',
+              '--disable-setuid-sandbox',
+              '--start-maximized',
+              '--headless', // Pastikan ini ada untuk menjalankan di mode headless
+              '--disable-gpu', // Menonaktifkan GPU agar bisa berjalan di Docker
+          ]
+        }, (base64Qrimg, asciiQR, attempts, urlCode) => {
+          console.log('Number of attempts to read the qrcode: ', attempts);
+          console.log('Terminal qrcode: ', asciiQR);
+          console.log('base64 image string qrcode: ', base64Qrimg);
+          console.log('urlCode (data-ref): ', urlCode);
         }, async (statusSession, session) => {
-            //Proses jika qr berhasil di update maka update data 
-            if(statusSession === 'successChat'){
+          if(statusSession === 'successChat'){
               await prisma.device.deleteMany();
               await prisma.device.create({
-                data: {
-                  name: device.name
-                },
+                  data: {
+                      name: device.name
+                  },
               });
-    
-            }
-          });
+          }
+        });
 
         // Mengatur client instance ke dalam variabel dan local app
         client = await clientInstance;

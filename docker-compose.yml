@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  venom-wa-api:
+    build:
+      context: . # Build image dari Dockerfile di direktori saat ini
+    container_name: venom-wa
+    ports:
+      - "3000:3000"
+    volumes:
+      # Gunakan Docker Volume untuk menyimpan data sesi (folder tokens)
+      # Ini akan membuat sesi login Anda persisten
+      - venom_sessions:/app/tokens
+    networks:
+      - mysql_default
+    # cap_add SYS_ADMIN seringkali dibutuhkan oleh puppeteer di lingkungan tertentu
+    # Pertahankan jika masih mengalami error sandbox, tapi ini adalah best practice
+    cap_add:
+      - SYS_ADMIN
+    restart: unless-stopped
+    environment:
+      # Anda bisa menambahkan variabel lingkungan di sini jika diperlukan
+      - DATABASE_URL=${DATABASE_URL} # Contoh jika Anda menggunakan .env file
+
+networks:
+  mysql_default:
+    external: true
+
+# Definisikan volume yang akan dikelola oleh Docker
+volumes:
+  venom_sessions:
